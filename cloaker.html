@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Cloaker</title>
+</head>
+<body>
+  <h2>Page Cloaker</h2>
+
+  <input id="title" placeholder="Fake tab title" value="Google Docs"><br><br>
+  <input id="icon" placeholder="Favicon URL"
+    value="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"><br><br>
+  <input id="url" placeholder="Target URL"><br><br>
+
+  <button onclick="openCloaked()">Open Cloaked Page</button>
+
+  <script>
+    function openCloaked() {
+      localStorage.setItem("cloak_title", title.value);
+      localStorage.setItem("cloak_icon", icon.value);
+      localStorage.setItem("cloak_url", url.value);
+      window.open("cloak.html", "_blank");
+    }
+  </script>
+</body>
+</html>
