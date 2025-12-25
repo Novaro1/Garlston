@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loading…</title>
+</head>
+<body style="margin:0">
+
+  <iframe id="frame" style="border:none;width:100vw;height:100vh;"></iframe>
+
+  <script>
+    const title = localStorage.getItem("cloak_title");
+    const icon = localStorage.getItem("cloak_icon");
+    const url = localStorage.getItem("cloak_url");
+
+    if (title) document.title = title;
+
+    if (icon) {
+      const link = document.createElement("link");
+      link.rel = "icon";
+      link.href = icon;
+      document.head.appendChild(link);
+    }
+
+    if (url) {
+      document.getElementById("frame").src = url;
+    }
+  </script>
+</body>
+</html>
